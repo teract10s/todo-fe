@@ -1,0 +1,94 @@
+/* Tasks.module.css */
+
+.tasks_container {
+    max-width: 800px;
+    margin: 20px auto 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tasks_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.tasks_h1 {
+    font-size: 24px;
+    color: #333;
+    margin: 0;
+}
+
+.tasks_status_dropdown {
+    justify-content: left;
+    width: 20%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
+.tasks_status_dropdown:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.tasks_ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.tasks_li {
+    background-color: #fff;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.tasks_li:hover {
+    background-color: #f0f0f0; /* Highlight the task on hover */
+}
+
+.tasks_li h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #333;
+}
+
+.tasks_li p {
+    margin: 5px 0 0;
+    color: #888;
+}
+
+.tasks_create_task_button_container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.tasks_create_task_button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.tasks_create_task_button:hover {
+    background-color: #0056b3;
+}
+
+.tasks_create_task_button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
