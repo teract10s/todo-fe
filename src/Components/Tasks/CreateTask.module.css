@@ -1,0 +1,58 @@
+.create_task_container {
+    width: 50%;
+    margin: 30px auto 0 auto;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.create_task_container h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.create_task_container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.create_task_container label {
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.create_task_container input[type="text"],
+.create_task_container input[type="datetime_local"],
+.create_task_container textarea,
+.create_task_container select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.create_task_container textarea {
+    resize: vertical;
+}
+
+.create_task_container .create_task_button {
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.create_task_container .create_task_button:hover {
+    background-color: #0056b3;
+}

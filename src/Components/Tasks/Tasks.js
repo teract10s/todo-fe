@@ -42,7 +42,7 @@ const Tasks = () => {
     return (
         <div className={styles.tasks_container}>
             <div className={styles.tasks_header}>
-                <h1 className={status.tasks_h1}>Tasks</h1>
+                <h1>Tasks</h1>
                 <select value={status} onChange={handleStatusChange} className={styles.tasks_status_dropdown}>
                     <option value="ALL">All</option>
                     <option value="NEW">New</option>
@@ -50,10 +50,10 @@ const Tasks = () => {
                     <option value="COMPLETED">Completed</option>
                 </select>
             </div>
-            <ul className={styles.tasks_ul}>
+            <ul>
                 {tasks.map((task, index) => (
-                    <li className={styles.ltasks_li} key={index} onClick={() => handleTaskClick(task.id)} style={{ cursor: 'pointer' }}>
-                        <h2>{task.name}</h2>
+                    <li key={index} onClick={() => handleTaskClick(task.id)} style={{ cursor: 'pointer' }}>
+                        <h2 className={styles.tasks_h2}>{task.name}</h2>
                         <p>{task.status}</p>
                     </li>
                 ))}

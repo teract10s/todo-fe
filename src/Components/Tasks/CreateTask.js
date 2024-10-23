@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { fetchWithAuth } from '../../utils/ApiUtils';
 import { API_BASE_URL } from '../../utils/Constants';
 import { useNavigate } from 'react-router-dom';
-import styles from './Tasks.module.css';
+import styles from './CreateTask.module.css';
 
 const CreateTask = () => {
     const [name, setName] = useState('');
@@ -53,7 +53,7 @@ const CreateTask = () => {
     };
 
     return (
-        <div className="create-task-container">
+        <div className={styles.create_task_container}>
             <h1>Create New Task</h1>
             <form onSubmit={handleSubmit}>
                 <div>
@@ -90,7 +90,7 @@ const CreateTask = () => {
                         <option value="COMPLETED">Completed</option>
                     </select>
                 </div>
-                <button type="submit" className="create-task-button">Create Task</button>
+                <button type="submit" className={styles.create_task_button}>Create Task</button>
             </form>
         </div>
     );

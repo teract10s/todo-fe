@@ -11,7 +11,7 @@ const TaskDetails = () => {
     const [isEditing, setIsEditing] = useState(false);
     const [name, setName] = useState('');
     const [description, setDescription] = useState('');
-    const [deadline, setDeadline] = useState('');
+    const [deadline, setDeadline] = useState();
     const [status, setStatus] = useState('');
 
     const formatDate = (dateString) => {
@@ -23,6 +23,23 @@ const TaskDetails = () => {
         const minutes = String(date.getMinutes()).padStart(2, '0');
         const seconds = String(date.getSeconds()).padStart(2, '0');
         return `${year}-${month}-${day}T${hours}:${minutes}:${seconds}`;
+    };
+
+    const formatDateToShow = (dateString) => {
+        const [datePart, timePart] = dateString.split(' ');
+        const [day, month, year] = datePart.split(':');
+        const [hours, minutes] = timePart.split(':');
+    
+        const date = new Date(year, month - 1, day, hours, minutes);
+
+        const formattedDay = String(date.getDate()).padStart(2, '0');
+        const formattedMonth = String(date.getMonth() + 1).padStart(2, '0');
+        const formattedYear = date.getFullYear();
+        const formattedHours = String(date.getHours()).padStart(2, '0');
+        const formattedMinutes = String(date.getMinutes()).padStart(2, '0');
+        const formattedSeconds = String(date.getSeconds()).padStart(2, '0');
+    
+        return `${formattedYear}-${formattedMonth}-${formattedDay}T${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
     };
 
     useEffect(() => {
@@ -37,7 +54,9 @@ const TaskDetails = () => {
                     setTask(data);
                     setName(data.name);
                     setDescription(data.description);
-                    setDeadline(data.deadline);
+                    setDeadline(formatDateToShow(data.deadline));
+                    console.info(data.deadline);
+                    
                     setStatus(data.status);
                 } else {
                     console.error('Failed to fetch task');
@@ -108,7 +127,7 @@ const TaskDetails = () => {
 
     return (
         <div className={styles.task_details_container}>
-            <h1 className={styles.task_details_h1}>Task Details</h1>
+            <h1>Task Details</h1>
             {isEditing ? (
                 <form onSubmit={handleEdit}>
                     <div>

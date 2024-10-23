@@ -10,6 +10,7 @@
 }
 
 .auth_form {
+    transform: translateY(-10%);
     background-color: #fff;
     padding: 40px;
     border-radius: 10px;

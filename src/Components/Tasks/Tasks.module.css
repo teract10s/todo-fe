@@ -2,7 +2,7 @@
 
 .tasks_container {
     max-width: 800px;
-    margin: 20px auto 0 auto;
+    margin: 3% auto 0 auto;
     padding: 20px;
     background-color: #ffffff;
     border-radius: 10px;
@@ -16,8 +16,8 @@
     margin-bottom: 20px;
 }
 
-.tasks_h1 {
-    font-size: 24px;
+.tasks_header h1 {
+    font-size: 32px;
     color: #333;
     margin: 0;
 }
@@ -38,25 +38,26 @@
     border-color: #007bff;
 }
 
-.tasks_ul {
+.tasks_container ul {
     list-style-type: none;
     padding: 0;
 }
 
-.tasks_li {
+.tasks_container li {
     background-color: #fff;
-    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
     padding: 15px;
-    border-radius: 8px;
+    margin-bottom: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease;
 }
 
-.tasks_li:hover {
-    background-color: #f0f0f0; /* Highlight the task on hover */
+.tasks_container li:hover {
+    background-color: #f0f0f0;
 }
 
-.tasks_li h2 {
+.tasks_h2 {
     margin: 0;
     font-size: 20px;
     color: #333;
