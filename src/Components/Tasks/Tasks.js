@@ -8,6 +8,7 @@ const Tasks = () => {
     const [tasks, setTasks] = useState([]);
     const [status, setStatus] = useState('ALL');
     const navigate = useNavigate();
+    const token = localStorage.getItem('token');
 
     useEffect(() => {
         const fetchTasks = async () => {
@@ -39,6 +40,11 @@ const Tasks = () => {
         setStatus(event.target.value);
     };
 
+    const handleLogout = () => {
+        localStorage.removeItem('token');
+        navigate('/auth/login');
+    };
+
     return (
         <div className={styles.tasks_container}>
             <div className={styles.tasks_header}>
@@ -49,6 +55,9 @@ const Tasks = () => {
                     <option value="ACTIVE">Active</option>
                     <option value="COMPLETED">Completed</option>
                 </select>
+                <button onClick={handleLogout} className={styles.tasks_logout_button}>
+                    {token ? "Logout" : "Exit"}
+                </button>
             </div>
             <ul>
                 {tasks.map((task, index) => (
@@ -58,11 +67,11 @@ const Tasks = () => {
                     </li>
                 ))}
             </ul>
-            <div className={styles.tasks_create_task_button_container}>
+            {token && <div className={styles.tasks_create_task_button_container}>
                 <Link to="/tasks/create">
                     <button className={styles.tasks_create_task_button}>Create New Task</button>
                 </Link>
-            </div>
+            </div>}
         </div>
     );
 };
